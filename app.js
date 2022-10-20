@@ -17,7 +17,7 @@ dotenv.config();
 var corsOptions = {
     origin: [
       "https://laureanomarenco.vercel.app",
-      "http://localhost:3001",
+      "http://localhost:3000",
     ],
     headers: "*",
     methods: "*",
