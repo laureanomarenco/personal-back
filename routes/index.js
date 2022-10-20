@@ -4,6 +4,14 @@ const { GMAIL_PASS, GMAIL_USER } = process.env;
 
 const router = Router()
 
+router.get('/ping', (req, res, next) => {
+    try {
+        res.send('pong')
+    } catch (error) {
+        next(err)
+    }
+})
+
 router.post('/mail', async(req, res, next) => {
     try {
         const { email, text } = req.body;
@@ -26,6 +34,7 @@ router.post('/mail', async(req, res, next) => {
             if (error) console.log(error);
             else console.log("Email enviado: " + info.response);
           });
+
     } catch (error) {
         next(err)
     }
